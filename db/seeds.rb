@@ -1,4 +1,4 @@
-
+[Attempt, Answer, Question, Test, Category, User].each(&:delete_all)
 user_ids = %w[Иван Борис Мишаня].collect { |user| User.create(name: user).id }
 
 lord_questions = [{
@@ -73,3 +73,14 @@ data.values.each do |type|
   end
 end
 
+users = User.all
+tests = Test.all
+10.times do
+  start_timestamp = DateTime.now - rand(0..10).hours
+  Attempt.create(
+    user_id: users.sample.id,
+    test_id: tests.sample.id,
+    started_at: start_timestamp,
+    completed_at: start_timestamp + 2.hours
+  )
+end
