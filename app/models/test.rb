@@ -1,8 +1,11 @@
 class Test < ApplicationRecord
 
   def self.find_by_category_name(name)
-    category_id = Category.where(title: name).first&.id
-    raise 'Категория не найдена' unless category_id
-    Test.where(category_id: category_id).order(title: :desc)
+    sanitized_sql = sanitize_sql_array(
+      ["INNER JOIN categories c ON c.id = tests.category_id WHERE c.title = '%s'", name]
+    )
+    Test.joins(sanitized_sql)
+        .order(title: :desc)
+        .pluck(:title)
   end
 end

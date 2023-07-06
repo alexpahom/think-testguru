@@ -76,11 +76,9 @@ end
 users = User.all
 tests = Test.all
 10.times do
-  start_timestamp = DateTime.now - rand(0..10).hours
   Attempt.create(
     user_id: users.sample.id,
     test_id: tests.sample.id,
-    started_at: start_timestamp,
-    completed_at: start_timestamp + 2.hours
+    created_at: DateTime.now - rand(0..10).hours,
   )
 end

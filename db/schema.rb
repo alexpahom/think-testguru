@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 2023_07_05_135041) do
   create_table "attempts", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "test_id", null: false
-    t.datetime "started_at"
-    t.datetime "completed_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["test_id"], name: "index_attempts_on_test_id"
