@@ -4,6 +4,5 @@ class User < ApplicationRecord
     Test.joins('JOIN attempts ON attempts.test_id = tests.id')
         .where(attempts: { user_id: id }, level: level)
         .distinct
-        .pluck(:title)
   end
 end
