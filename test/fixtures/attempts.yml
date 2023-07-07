@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  test: one
+  started_at: 2023-07-05 15:50:42
+  completed_at: 2023-07-05 15:50:42
+
+two:
+  user: two
+  test: two
+  started_at: 2023-07-05 15:50:42
+  completed_at: 2023-07-05 15:50:42
