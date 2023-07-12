@@ -13,6 +13,7 @@ class QuestionsController < ApplicationController
 
   def new
     @question = @test.questions.new
+    render :edit
   end
 
   def create
@@ -20,7 +21,7 @@ class QuestionsController < ApplicationController
     if question.save
       redirect_to question
     else
-      render :new
+      render :edit
     end
   end
 
