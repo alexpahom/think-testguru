@@ -1,6 +1,6 @@
 <h1>Создать вопрос</h1>
 
-<form action='<%= "/tests/#{@test.id}/questions" %>' method="post">
+<form action="<%= test_questions_path(@test.id) %>" method="post">
   <p>
     <label for="question-body">Текст вопроса: </label>
     <input type="text" name="question[body]" id="question-body">
