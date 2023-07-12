@@ -1,5 +1,6 @@
-<h1><%= @test.title %></h1>
+<h3><%= @test.title %></h3>
 <%= link_to 'Создать вопрос', new_test_question_path(@test) %>
+<%= link_to 'Назад', tests_path %>
 <table>
   <% @questions.each do |question| %>
     <tr>
@@ -15,4 +16,3 @@
     </tr>
   <% end %>
 </table>
-
