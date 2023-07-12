@@ -1,0 +1,18 @@
+<h1><%= @test.title %></h1>
+<%= link_to 'Создать вопрос', new_test_question_path(@test) %>
+<table>
+  <% @questions.each do |question| %>
+    <tr>
+      <td><%= question.body %></td>
+      <td><%= link_to 'Детали', question_path(question) %></td>
+      <td><%= link_to 'Редактировать', edit_question_path(question) %></td>
+      <td>
+        <%= link_to 'Удалить',
+                    question_path(question),
+                    method: :delete,
+                    data: { confirm: 'Удалить вопрос?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
