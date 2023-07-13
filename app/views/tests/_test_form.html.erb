@@ -1,0 +1,19 @@
+<%= form_with model: @test, local: true do |form| %>
+  <%= render 'shared/errors', resource: @test %>
+  <p>
+    <%= form.label :title, 'Название' %>
+    <%= form.text_field :title, id: :test_title %>
+  </p>
+  <p>
+    <%= form.label :level, 'Уровень' %>
+    <%= form.number_field :level, id: :test_level %>
+  </p>
+  <p>
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :title %>
+  </p>
+<!--  TODO: delete after auth implementation-->
+  <p><%= form.hidden_field :author_id, value: random_author_id %></p>
+  <p><%= form.submit 'Сохранить' %></p>
+  <p><%= link_to 'Отмена', tests_path %></p>
+<% end %>
