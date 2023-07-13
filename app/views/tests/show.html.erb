@@ -2,7 +2,7 @@
 <%= link_to 'Создать вопрос', new_test_question_path(@test) %>
 <%= link_to 'Назад', tests_path %>
 <table>
-  <% @questions.each do |question| %>
+  <% @test.questions.each do |question| %>
     <tr>
       <td><%= question.body %></td>
       <td><%= link_to 'Детали', question_path(question) %></td>
