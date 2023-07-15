@@ -20,4 +20,8 @@ class Test < ApplicationRecord
   def self.find_test_titles_by_category(category_name)
     category_tests(category_name).pluck(:title)
   end
+
+  def total_correct_answers_count
+    Test.joins(questions: :answers).where(id:, answers: { correct: true }).count
+  end
 end
