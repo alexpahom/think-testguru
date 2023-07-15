@@ -13,16 +13,15 @@ class AnswersController < ApplicationController
   def create
     @answer = @question.answers.new(answer_params)
     if @answer.save
-      redirect_to @answer, notice: "Answer was successfully created."
+      redirect_to @answer
     else
       render :new
     end
   end
 
-  # PATCH/PUT /answers/1 or /answers/1.json
   def update
     if @answer.update(answer_params)
-      redirect_to @answer, notice: "Answer was successfully updated."
+      redirect_to @answer
     else
       render :edit
     end
