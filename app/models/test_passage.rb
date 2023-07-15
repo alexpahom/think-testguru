@@ -6,15 +6,10 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
+  before_validation :before_validation_set_question, on: %i[create update]
 
   def accept!(answer_ids)
-    if answer_ids.nil?
-      errors.add(:answers, 'Нужно выбрать хотя бы один ответ')
-      return
-    end
     self.correct_answers_made += 1 if correct_answer?(answer_ids)
-    self.current_question = next_question
     save!
   end
 
@@ -32,19 +27,20 @@ class TestPassage < ApplicationRecord
 
   private
 
-  def before_validation_set_first_question
-    self.current_question = test.questions.first
+  def before_validation_set_question
+    self.current_question =
+      if new_record?
+        test.questions.first
+      else
+        test.questions.order(:id).where('id > ?', current_question.id).first
+      end
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == answer_ids.reject(&:empty?).map(&:to_i).sort
   end
 
   def correct_answers
     current_question.answers.correct
-  end
-
-  def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
   end
 end

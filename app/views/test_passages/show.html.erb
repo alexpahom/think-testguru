@@ -7,8 +7,7 @@
 <p class="progress">Вопрос <%= current_question_number %> из <%= total_questions_count %></p>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body,
-                                  include_hidden: false do |a| %>
+  <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body do |a| %>
     <p>
       <%= a.check_box id: "answer_id_#{a.object.id}" %>
       <%= a.label %>
