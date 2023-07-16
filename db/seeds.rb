@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-[Attempt, Answer, Question, Test, Category, User].each(&:delete_all)
+[TestPassage, Answer, Question, Test, Category, User].each(&:delete_all)
 users = %w[ivan@test.com boris@example.com miha@test.com].collect { |user| User.create!(email: user) }
 
 categories = Category.create!([{ title: 'Кино' }, { title: 'Музыка' }])
@@ -54,7 +54,7 @@ Answer.create!([
                ])
 
 10.times do
-  Attempt.create!(
+  TestPassage.create!(
     user_id: users.sample&.id,
     test_id: tests.sample&.id,
     created_at: DateTime.now - rand(0..10).hours
