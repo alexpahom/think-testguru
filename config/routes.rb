@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
 
   get :signup, to: 'users#new'
+  get :login, to: 'sessions#new'
+
   resources :users, only: :create
+  resources :sessions, only: :create
 
   resources :tests do
     resources :questions, shallow: true, except: %i[index] do
