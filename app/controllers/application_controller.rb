@@ -7,7 +7,10 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
-    redirect_to login_path unless current_user
+    return if  current_user
+
+    cookies[:forward_to] = request.path
+    redirect_to login_path, alert: 'Сперва нужно войти'
   end
 
   def current_user
