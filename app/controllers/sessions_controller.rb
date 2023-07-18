@@ -9,9 +9,14 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to tests_path
+      redirect_to tests_path, notice: 'Успешный вход'
     else
-      render :new
+      redirect_to login_path, alert: 'Нет пользователя с таким email-ом и паролем'
     end
+  end
+
+  def destroy
+    reset_session
+    redirect_to login_path, notice: 'Успешно вышли из системы'
   end
 end
