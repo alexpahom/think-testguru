@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
   def logged_in?
     current_user.present?
   end
+
+  def alert_messages_for(entity)
+    entity.errors.full_messages.to_sentence
+  end
 end

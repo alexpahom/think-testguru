@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 [TestPassage, Answer, Question, Test, Category, User].each(&:delete_all)
-users = %w[ivan@test.com boris@example.com miha@test.com].collect { |user| User.create!(email: user) }
+users = User.create!([
+                       { username: 'fox', email: 'fox@test.com', password: 'Test123' },
+                       { username: 'wolf', email: 'wolf@test.com', password: 'Test123' },
+                       { username: 'bear', email: 'bear@test.com', password: 'Test123' }
+                     ])
 
 categories = Category.create!([{ title: 'Кино' }, { title: 'Музыка' }])
 

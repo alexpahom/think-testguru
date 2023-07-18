@@ -10,9 +10,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to tests_path
+      redirect_to tests_path, notice: 'Новый пользователь создан.'
     else
-      render :new
+      redirect_to signup_path, alert: alert_messages_for(@user)
     end
   end
 
