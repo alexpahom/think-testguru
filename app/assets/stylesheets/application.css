@@ -20,3 +20,17 @@
     width: 100%;
     text-align: right;
 }
+
+.flash {
+    border: 2px solid;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.flash.flash-notice {
+    border-color: darkcyan;
+}
+
+.flash.flash-alert {
+    border-color: #730E15;
+}
