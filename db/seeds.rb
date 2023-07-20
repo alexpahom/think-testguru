@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 [TestPassage, Answer, Question, Test, Category, User].each(&:delete_all)
 users = User.create!([
-                       { username: 'fox', email: 'fox@test.com', password: 'Test123' },
-                       { username: 'wolf', email: 'wolf@test.com', password: 'Test123' },
-                       { username: 'bear', email: 'bear@test.com', password: 'Test123' }
+                       { username: 'fox', email: 'fox@test.com', password: 'Test123', type: 'Admin', confirmed_at: Time.now },
+                       { username: 'wolf', email: 'wolf@test.com', password: 'Test123', confirmed_at: Time.now },
+                       { username: 'bear', email: 'bear@test.com', password: 'Test123', confirmed_at: Time.now }
                      ])
 
 categories = Category.create!([{ title: 'Кино' }, { title: 'Музыка' }])
