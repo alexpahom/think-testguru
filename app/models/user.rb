@@ -1,6 +1,12 @@
 class User < ApplicationRecord
 
-  include Auth
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :confirmable
 
   has_many :authored_tests, foreign_key: :author_id, class_name: 'Test', dependent: :nullify
   has_many :test_passages, dependent: :destroy

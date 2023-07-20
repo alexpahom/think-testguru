@@ -1,12 +1,12 @@
 <nav>
   <h3><a class="logo-link" href="<%= root_path %>">Test GURU</a></h3>
   <div>
-    <% if logged_in? %>
+    <% if user_signed_in? %>
       <span>Добро пожаловать, гуру <%= current_user.username %></span>
-      <%= link_to 'Выход', logout_path, method: :delete %>
+      <%= link_to 'Выход', destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= link_to 'Вход', login_path %>
-      <%= link_to 'Регистрация', signup_path %>
+      <%= link_to 'Вход', new_user_session_path %>
+      <%= link_to 'Регистрация', new_user_registration_path %>
     <% end %>
   </div>
 </nav>
