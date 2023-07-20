@@ -4,6 +4,10 @@
   <tr>
     <th>Название</th>
     <th>Кол-во вопросов</th>
+    <th colspan="3">Действия</th>
   </tr>
   <%= render @tests %>
+  <tr>
+    <td><%= link_to 'Создать', new_admin_test_path %></td>
+  </tr>
 </table>
