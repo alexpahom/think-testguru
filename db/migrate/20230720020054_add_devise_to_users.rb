@@ -36,8 +36,8 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps null: false
       t.string :type, null: false, default: 'User'
-      t.string :first_name
-      t.string :last_name
+      t.string :first_name, null: false, default: ''
+      t.string :last_name, null: false, default: ''
       t.remove_index :username
       t.remove :username
     end
