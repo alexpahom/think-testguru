@@ -13,7 +13,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages, dependent: :destroy
 
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
-  validates :username, presence: true, uniqueness: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 
   def find_tests_by_level(level)
     tests.where(level: level).distinct

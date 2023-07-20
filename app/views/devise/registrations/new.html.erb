@@ -9,8 +9,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :username, 'Имя пользователя' %><br />
-    <%= f.text_field :username %>
+    <%= f.label :first_name, 'Имя' %><br />
+    <%= f.text_field :first_name, id: :user_first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name, 'Фамилия' %><br />
+    <%= f.text_field :last_name, id: :user_last_name %>
   </div>
 
   <div class="field">

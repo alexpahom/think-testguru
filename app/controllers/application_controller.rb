@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[username])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name])
   end
 
   def after_sign_in_path_for(_resource)
