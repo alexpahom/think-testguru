@@ -1,0 +1,37 @@
+en:
+  activerecord:
+    models:
+      test: "Test"
+      question: "Question"
+      answer: "Answer"
+      category: "Category"
+      user: "User"
+      admin: "Admin"
+
+    attributes:
+      test:
+        title: "Title"
+        level: "Level"
+        category: "Category"
+        author: "Author"
+      question:
+        body: "Question text"
+        test: "Test"
+      answer:
+        body: "Answer text"
+        correct: "Correct"
+        question: "Question"
+      user:
+        email: "Email"
+        first_name: "First name"
+        last_name: "Last name"
+        password: "Password"
+
+    errors:
+      messages:
+        blank: "can't be blank"
+        taken: "has already been taken"
+        invalid: "is invalid"
+        numericality: "must be an integer"
+        greater_than_or_equal_to: "must be greater than or equal to %{count}"
+        too_many_answers: "Question can't have more than 4 answers"

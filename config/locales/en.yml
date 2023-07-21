@@ -41,12 +41,13 @@ en:
       answer:
         create: "Create"
         update: "Save"
-
     label:
       test:
         title: "Title"
         level: "Level"
         category_id: "Category"
+    select:
+      prompt: "Choose:"
 
   admin:
     actions:

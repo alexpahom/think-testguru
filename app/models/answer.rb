@@ -9,6 +9,6 @@ class Answer < ApplicationRecord
   private
 
   def validate_answers_count
-    errors.add(:question, message: 'Больше 4х ответов') if question.answers.count >= 4
+    errors.add(:question, message: t('activerecord.errors.messages.too_many_answers')) if question.answers.count >= 4
   end
 end

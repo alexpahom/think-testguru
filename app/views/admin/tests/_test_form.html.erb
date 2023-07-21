@@ -10,7 +10,7 @@
   </p>
   <p>
     <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :title %>
+    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
   <p><%= form.submit%></p>
   <p><%= link_to 'Отмена', admin_tests_path %></p>
