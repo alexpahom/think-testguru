@@ -10,11 +10,13 @@ ru:
       answer:
         create: "Создать"
         update: "Сохранить"
+
     label:
       test:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+
     select:
       prompt: "Выберите:"
 
@@ -23,6 +25,7 @@ ru:
       edit: "Редактировать"
       show: "Просмотр"
       delete: "Удалить"
+
     tests:
       test_form:
         edit_header: "Редактировать тест %{title}"
@@ -34,6 +37,13 @@ ru:
         create: "Создать тест"
       show:
         create: "Создать вопрос"
+      create:
+        success: "Тест успешно создан"
+      update:
+        success: "Тест изменен"
+      destroy:
+        success: "Тест удален"
+
     questions:
       question:
         confirm_delete: "Удалить вопрос?"
@@ -44,6 +54,13 @@ ru:
       show:
         answers_header: "Ответы"
         add_answer: "Добавить ответ"
+      create:
+        success: "Вопрос добавлен"
+      update:
+        success: "Изменено"
+      destroy:
+        success: "Вопрос удален"
+
     answers:
       answer:
         confirm_delete: "Удалить ответ?"
@@ -58,6 +75,13 @@ ru:
         question_header: "Вопрос"
         answer: "Ответ"
         correct: "Правильный"
+      update:
+        success: "Успешно изменено"
+      create:
+        success: "Ответ добавлен"
+      destroy:
+        success: "Ответ удален"
+
   general:
     errors: "Ошибки"
     back: "Назад"
@@ -66,6 +90,9 @@ ru:
     login: "Вход"
     signup: "Регистрация"
     welcome: "Добро пожаловать, гуру %{first_name}!"
+    unauthorized: "Нет прав для просмотра этой страницы"
+    welcome_flash: "Привет, %{first_name}!"
+
   test_passages:
     result:
       test_completed_header: "Тест %{title} завершен"
@@ -76,6 +103,9 @@ ru:
       in_progress_header: "Выполнение теста %{title}"
       questions_progress: "Вопрос %{current} из %{total}"
       next: "Далее"
+    update:
+      test_completed: "Тест окончен!"
+
   tests:
     test:
       start: "Начать"
@@ -83,4 +113,5 @@ ru:
       test_list_header: "Список тестов"
       title: "Название"
       question_count: "Кол-во вопросов"
-
+    start:
+      start: "Погнали!"
