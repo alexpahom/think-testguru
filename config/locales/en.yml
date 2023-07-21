@@ -30,4 +30,86 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  helpers:
+    submit:
+      test:
+        create: "Create"
+        update: "Save"
+      question:
+        create: "Create"
+        update: "Save"
+      answer:
+        create: "Create"
+        update: "Save"
+
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+
+  admin:
+    actions:
+      edit: "Edit"
+      show: "Show"
+      delete: "Delete"
+    tests:
+      test_form:
+        edit_header: "Edit Test %{title}"
+        create_header: "Create Test"
+      test:
+        confirm_delete: "Delete test?"
+      index:
+        actions: "Actions"
+        create: "Create test"
+      show:
+        create: "Create question"
+    questions:
+      question:
+        confirm_delete: "Delete question?"
+      question_form:
+        body: "Question"
+        create_header: "Create question for %{title}"
+        edit_header: "Edit %{title} question"
+      show:
+        answers_header: "Answers"
+        add_answer: "Add answer"
+    answers:
+      answer:
+        confirm_delete: "Delete answer?"
+      form:
+        correct: "Correct"
+        answer_text: "Answer text"
+      edit:
+        edit_header: "Edit question"
+      new:
+        add_answer: "Add answer"
+      show:
+        question_header: "Question"
+        answer: "Answer"
+        correct: "Correct"
+  general:
+    errors: "Errors"
+    back: "Back"
+    thinknetica_link: "Learning project in Thinknetica online-school"
+    logout: "Logout"
+    login: "Login"
+    signup: "Sign In"
+    welcome: "Welcome, %{first_name} guru!"
+  test_passages:
+    result:
+      test_completed_header: "%{title} test completed"
+      test_passed: "Test completed successfully!"
+      test_failed: "Test is failed!"
+      score: "Score"
+    show:
+      in_progress_header: "Passing %{title} test"
+      questions_progress: "Question %{current} out of %{total}"
+      next: "Next"
+  tests:
+    test:
+      start: "Start"
+    index:
+      test_list_header: "Test list"
+      title: "Title"
+      question_count: "Question count"

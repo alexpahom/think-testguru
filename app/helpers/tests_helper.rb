@@ -3,9 +3,9 @@
 module TestsHelper
   def test_header(test)
     if test.persisted?
-      "Редактировать тест #{test.title}"
+      t('admin.tests.test_form.edit_header', title: test.title)
     else
-      'Создать тест'
+      t('admin.tests.test_form.create_header')
     end
   end
 end

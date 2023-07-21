@@ -1,8 +1,8 @@
-<h1>Редактировать ответ</h1>
+<h1><%= t('.edit_header') %></h1>
 
 <p>
   <%= @answer.question.body %>
 </p>
 
 <%= render 'form', answer: @answer %>
-<%= link_to 'Назад', admin_question_path(@answer.question) %>
+<%= link_to t('general.back'), admin_question_path(@answer.question) %>

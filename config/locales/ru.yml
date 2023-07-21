@@ -1,2 +1,84 @@
 ru:
-  hello: "Hello world"
+  helpers:
+    submit:
+      test:
+        create: "Создать"
+        update: "Сохранить"
+      question:
+        create: "Создать"
+        update: "Сохранить"
+      answer:
+        create: "Создать"
+        update: "Сохранить"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+
+  admin:
+    actions:
+      edit: "Редактировать"
+      show: "Просмотр"
+      delete: "Удалить"
+    tests:
+      test_form:
+        edit_header: "Редактировать тест %{title}"
+        create_header: "Создать тест"
+      test:
+        confirm_delete: "Удалить тест?"
+      index:
+        actions: "Действия"
+        create: "Создать тест"
+      show:
+        create: "Создать вопрос"
+    questions:
+      question:
+        confirm_delete: "Удалить вопрос?"
+      question_form:
+        body: "Вопрос"
+        create_header: "Создать вопрос для %{title}"
+        edit_header: "Редактировать вопрос для %{title}"
+      show:
+        answers_header: "Ответы"
+        add_answer: "Добавить ответ"
+    answers:
+      answer:
+        confirm_delete: "Удалить ответ?"
+      form:
+        correct: "Правильный"
+        answer_text: "Текст ответа"
+      edit:
+        edit_header: "Редактировать вопрос"
+      new:
+        add_answer: "Добавить ответ"
+      show:
+        question_header: "Вопрос"
+        answer: "Ответ"
+        correct: "Правильный"
+  general:
+    errors: "Ошибки"
+    back: "Назад"
+    thinknetica_link: "Учебный проект в онлайн-школе Thinknetica"
+    logout: "Выход"
+    login: "Вход"
+    signup: "Регистрация"
+    welcome: "Добро пожаловать, гуру %{first_name}!"
+  test_passages:
+    result:
+      test_completed_header: "Тест %{title} завершен"
+      test_passed: "Тест пройден успешно!"
+      test_failed: "Тест не пройден!"
+      score: "Результат"
+    show:
+      in_progress_header: "Выполнение теста %{title}"
+      questions_progress: "Вопрос %{current} из %{total}"
+      next: "Далее"
+  tests:
+    test:
+      start: "Начать"
+    index:
+      test_list_header: "Список тестов"
+      title: "Название"
+      question_count: "Кол-во вопросов"
+

@@ -1,10 +1,12 @@
-<h3>Выполнение теста <%= @test_passage.test.title %></h3>
+<h3><%= t('.in_progress_header', title: @test_passage.test.title) %></h3>
 
 <b><%= @test_passage.current_question.body %></b>
 
 <%= render 'shared/errors', resource: @test_passage %>
 
-<p class="progress">Вопрос <%= current_question_number %> из <%= total_questions_count %></p>
+<p class="progress">
+  <%= t('.questions_progress', current: current_question_number, total: total_questions_count) %>
+</p>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body do |a| %>
@@ -14,5 +16,5 @@
     </p>
   <% end %>
 
-  <p><%= form.submit 'Далее' %></p>
+  <p><%= form.submit t('.next') %></p>
 <% end %>
