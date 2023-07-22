@@ -1,11 +1,11 @@
-<nav>
-  <h3><a class="logo-link" href="<%= root_path %>">Test GURU</a></h3>
+<nav class="navbar navbar-light bg-light">
+  <h3><%= link_to 'Test GURU', root_path, class: 'navbar-brand' %></h3>
   <div>
     <% if user_signed_in? %>
-      <p class="nav user">
-        <span><%= t('general.welcome', first_name: current_user.first_name)%></span> |
+      <span class="navbar-text">
+        <%= t('general.welcome', first_name: current_user.first_name)%> |
         <%= link_to t('general.logout'), destroy_user_session_path, method: :delete %>
-      </p>
+      </span>
     <% else %>
       <%= link_to t('general.login'), new_user_session_path %>
       <%= link_to t('general.signup'), new_user_registration_path %>
