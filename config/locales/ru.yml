@@ -1,2 +1,117 @@
 ru:
-  hello: "Hello world"
+  helpers:
+    submit:
+      test:
+        create: "Создать"
+        update: "Сохранить"
+      question:
+        create: "Создать"
+        update: "Сохранить"
+      answer:
+        create: "Создать"
+        update: "Сохранить"
+
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+
+    select:
+      prompt: "Выберите:"
+
+  admin:
+    actions:
+      edit: "Редактировать"
+      show: "Просмотр"
+      delete: "Удалить"
+
+    tests:
+      test_form:
+        edit_header: "Редактировать тест %{title}"
+        create_header: "Создать тест"
+      test:
+        confirm_delete: "Удалить тест?"
+      index:
+        actions: "Действия"
+        create: "Создать тест"
+      show:
+        create: "Создать вопрос"
+      create:
+        success: "Тест успешно создан"
+      update:
+        success: "Тест изменен"
+      destroy:
+        success: "Тест удален"
+
+    questions:
+      question:
+        confirm_delete: "Удалить вопрос?"
+      question_form:
+        body: "Вопрос"
+        create_header: "Создать вопрос для %{title}"
+        edit_header: "Редактировать вопрос для %{title}"
+      show:
+        answers_header: "Ответы"
+        add_answer: "Добавить ответ"
+      create:
+        success: "Вопрос добавлен"
+      update:
+        success: "Изменено"
+      destroy:
+        success: "Вопрос удален"
+
+    answers:
+      answer:
+        confirm_delete: "Удалить ответ?"
+      form:
+        correct: "Правильный"
+        answer_text: "Текст ответа"
+      edit:
+        edit_header: "Редактировать вопрос"
+      new:
+        add_answer: "Добавить ответ"
+      show:
+        question_header: "Вопрос"
+        answer: "Ответ"
+        correct: "Правильный"
+      update:
+        success: "Успешно изменено"
+      create:
+        success: "Ответ добавлен"
+      destroy:
+        success: "Ответ удален"
+
+  general:
+    errors: "Ошибки"
+    back: "Назад"
+    thinknetica_link: "Учебный проект в онлайн-школе Thinknetica"
+    logout: "Выход"
+    login: "Вход"
+    signup: "Регистрация"
+    welcome: "Добро пожаловать, гуру %{first_name}!"
+    unauthorized: "Нет прав для просмотра этой страницы"
+    welcome_flash: "Привет, %{first_name}!"
+
+  test_passages:
+    result:
+      test_completed_header: "Тест %{title} завершен"
+      test_passed: "Тест пройден успешно!"
+      test_failed: "Тест не пройден!"
+      score: "Результат"
+    show:
+      in_progress_header: "Выполнение теста %{title}"
+      questions_progress: "Вопрос %{current} из %{total}"
+      next: "Далее"
+    update:
+      test_completed: "Тест окончен!"
+
+  tests:
+    test:
+      start: "Начать"
+    index:
+      test_list_header: "Список тестов"
+      title: "Название"
+      question_count: "Кол-во вопросов"
+    start:
+      start: "Погнали!"

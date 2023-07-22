@@ -3,9 +3,9 @@
 module QuestionsHelper
   def question_header(question)
     if question.persisted?
-      "Редактировать вопрос для #{@question.test.title}"
+      t('admin.questions.question_form.edit_header', title: @question.test.title)
     else
-      "Создать вопрос для #{@test.title}"
+      t('admin.questions.question_form.create_header', title: @test.title)
     end
   end
 end

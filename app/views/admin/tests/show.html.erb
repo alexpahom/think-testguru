@@ -1,6 +1,6 @@
 <h3><%= @test.title %></h3>
-<%= link_to 'Создать вопрос', new_admin_test_question_path(@test) %>
-<%= link_to 'Назад', admin_tests_path %>
+<%= link_to t('.create'), new_admin_test_question_path(@test) %>
+<%= link_to t('general.back'), admin_tests_path %>
 <table>
   <%= render @test.questions %>
 </table>

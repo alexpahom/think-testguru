@@ -1,10 +1,10 @@
-<h3>Тест <%= @test_passage.test.title %> завершен</h3>
+<h3><%= t('.test_completed_header', title: @test_passage.test.title) %></h3>
 
 <% if @test_passage.passed? %>
-  <p>Тест пройден успешно!</p>
-  <p>Результат: <span class="test-passed"><%= @test_passage.pass_rate_percents %>%</span></p>
+  <p><%= t('.test_passed')%></p>
+  <p><%= t('.score') %>: <span class="test-passed"><%= @test_passage.pass_rate_percents %>%</span></p>
 <% else %>
-  <p>Тест не пройден!</p>
-  <p>Результат: <span class="test-failed"><%= @test_passage.pass_rate_percents %>%</span></p>
+  <p><%= t('.test_failed') %></p>
+  <p><%= t('.score') %>: <span class="test-failed"><%= @test_passage.pass_rate_percents %>%</span></p>
 <% end %>
-<%= link_to 'Вернуться', tests_path %>
+<%= link_to t('general.back'), tests_path %>

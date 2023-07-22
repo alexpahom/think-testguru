@@ -30,4 +30,119 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  helpers:
+    submit:
+      test:
+        create: "Create"
+        update: "Save"
+      question:
+        create: "Create"
+        update: "Save"
+      answer:
+        create: "Create"
+        update: "Save"
+
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+
+    select:
+      prompt: "Choose:"
+
+  admin:
+    actions:
+      edit: "Edit"
+      show: "Show"
+      delete: "Delete"
+
+    tests:
+      test_form:
+        edit_header: "Edit Test %{title}"
+        create_header: "Create Test"
+      test:
+        confirm_delete: "Delete test?"
+      index:
+        actions: "Actions"
+        create: "Create test"
+      show:
+        create: "Create question"
+      create:
+        success: "Test successfully created"
+      update:
+        success: "Test has been updated"
+      destroy:
+        success: "Test deleted"
+
+    questions:
+      question:
+        confirm_delete: "Delete question?"
+      question_form:
+        body: "Question"
+        create_header: "Create question for %{title}"
+        edit_header: "Edit %{title} question"
+      show:
+        answers_header: "Answers"
+        add_answer: "Add answer"
+      create:
+        success: "Question added"
+      update:
+        success: "Updated"
+      destroy:
+        success: "Question deleted"
+
+    answers:
+      answer:
+        confirm_delete: "Delete answer?"
+      form:
+        correct: "Correct"
+        answer_text: "Answer text"
+      edit:
+        edit_header: "Edit question"
+      new:
+        add_answer: "Add answer"
+      show:
+        question_header: "Question"
+        answer: "Answer"
+        correct: "Correct"
+      update:
+        success: "Answer updated"
+      create:
+        success: "Answer added"
+      destroy:
+        success: "Answer deleted"
+
+  general:
+    errors: "Errors"
+    back: "Back"
+    thinknetica_link: "Learning project in Thinknetica online-school"
+    logout: "Logout"
+    login: "Login"
+    signup: "Sign In"
+    welcome: "Welcome, %{first_name} guru!"
+    unauthorized: "Unauthorized to see this page"
+    welcome_flash: "Welcome, %{first_name}!"
+
+  test_passages:
+    result:
+      test_completed_header: "%{title} test completed"
+      test_passed: "Test completed successfully!"
+      test_failed: "Test is failed!"
+      score: "Score"
+    show:
+      in_progress_header: "Passing %{title} test"
+      questions_progress: "Question %{current} out of %{total}"
+      next: "Next"
+    update:
+      test_completed: "Test completed!"
+
+  tests:
+    test:
+      start: "Start"
+    index:
+      test_list_header: "Test list"
+      title: "Title"
+      question_count: "Question count"
+    start:
+      start: "Let's roll!"
