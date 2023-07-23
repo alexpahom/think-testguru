@@ -92,6 +92,7 @@ ru:
     welcome: "Добро пожаловать, гуру %{first_name}!"
     unauthorized: "Нет прав для просмотра этой страницы"
     welcome_flash: "Привет, %{first_name}!"
+    management: "Управление"
 
   test_passages:
     result:
@@ -115,6 +116,3 @@ ru:
       question_count: "Кол-во вопросов"
     start:
       start: "Погнали!"
-  shared:
-    navbar:
-      management: "Управление"
