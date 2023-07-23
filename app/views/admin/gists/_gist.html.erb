@@ -1,0 +1,9 @@
+<tr>
+  <td>
+    <%= link_to shortened_question(gist.question.body), admin_question_path(gist.question) %>
+  </td>
+  <td>
+    <%= link_to 'Gist URL', gist.github_url %>
+  </td>
+  <td><%= gist.author_email %></td>
+</tr>

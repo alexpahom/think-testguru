@@ -81,6 +81,12 @@ ru:
         success: "Ответ добавлен"
       destroy:
         success: "Ответ удален"
+    gists:
+      index:
+        gist_list_header: "Список gist"
+        question: "Вопрос"
+        url: "URL"
+        email: "Email автора"
 
   general:
     errors: "Ошибки"
@@ -93,6 +99,7 @@ ru:
     unauthorized: "Нет прав для просмотра этой страницы"
     welcome_flash: "Привет, %{first_name}!"
     management: "Управление"
+    gist_list: "Список gist"
 
   test_passages:
     result:
@@ -104,7 +111,7 @@ ru:
       in_progress_header: "Выполнение теста %{title}"
       questions_progress: "Вопрос %{current} из %{total}"
       next: "Далее"
-      gist_question: "Сохранить в гист"
+      gist_question: "Сохранить как gist"
     update:
       test_completed: "Тест окончен!"
 
@@ -120,5 +127,5 @@ ru:
 
   gists:
     create:
-      success: "Гист успешно сохранен. Ссылка - %{link}"
+      success: "Gist успешно сохранен. Ссылка - %{link}"
       failure: "При сохранении произошла ошибка"

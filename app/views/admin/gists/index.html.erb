@@ -1,0 +1,10 @@
+<h3><%= t('.gist_list_header') %></h3>
+<table class="table table-borderless p-4">
+  <tr>
+    <th><%= t('.question') %></th>
+    <th><%= t('.url') %></th>
+    <th><%= t('.email')%></th>
+  </tr>
+  <%= render @gists %>
+  <%= link_to t('general.back'), admin_tests_path %>
+</table>
