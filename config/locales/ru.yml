@@ -104,8 +104,12 @@ ru:
       in_progress_header: "Выполнение теста %{title}"
       questions_progress: "Вопрос %{current} из %{total}"
       next: "Далее"
+      gist_question: "Сохранить в гист"
     update:
       test_completed: "Тест окончен!"
+    gist:
+      success: "Гист успешно сохранен. Ссылка - %{link}"
+      failure: "При сохранении произошла ошибка"
 
   tests:
     test:
