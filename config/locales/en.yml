@@ -135,12 +135,9 @@ en:
       in_progress_header: "Passing %{title} test"
       questions_progress: "Question %{current} out of %{total}"
       next: "Next"
-      gist_question: "Gist Questiuon"
+      gist_question: "Gist Question"
     update:
       test_completed: "Test completed!"
-    gist:
-      success: "Gist successfully saved. Check %{link}"
-      failure: "There was an error during saving"
 
   tests:
     test:
@@ -151,3 +148,8 @@ en:
       question_count: "Question count"
     start:
       start: "Let's roll!"
+
+  gists:
+    create:
+      success: "Gist successfully saved. Check %{link}"
+      failure: "There was an error during saving"

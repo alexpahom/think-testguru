@@ -107,9 +107,6 @@ ru:
       gist_question: "Сохранить в гист"
     update:
       test_completed: "Тест окончен!"
-    gist:
-      success: "Гист успешно сохранен. Ссылка - %{link}"
-      failure: "При сохранении произошла ошибка"
 
   tests:
     test:
@@ -120,3 +117,8 @@ ru:
       question_count: "Кол-во вопросов"
     start:
       start: "Погнали!"
+
+  gists:
+    create:
+      success: "Гист успешно сохранен. Ссылка - %{link}"
+      failure: "При сохранении произошла ошибка"
