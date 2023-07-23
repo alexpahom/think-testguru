@@ -1,9 +1,12 @@
 <h3><%= t('.test_list_header') %></h3>
-
-<table>
-  <tr>
-    <th><%= t('.title') %></th>
-    <th><%= t('.question_count')%> </th>
-  </tr>
-  <%= render @tests %>
-</table>
+<div class="row">
+  <div class="col-md-7">
+    <table class="table table-borderless table-hover align-middle ms-5">
+      <tr>
+        <th><%= t('.title') %></th>
+        <th><%= t('.question_count') %> </th>
+      </tr>
+      <%= render @tests %>
+    </table>
+  </div>
+</div>

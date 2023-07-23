@@ -146,3 +146,6 @@ en:
       question_count: "Question count"
     start:
       start: "Let's roll!"
+  shared:
+    navbar:
+      management: "Management"

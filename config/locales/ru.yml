@@ -115,3 +115,6 @@ ru:
       question_count: "Кол-во вопросов"
     start:
       start: "Погнали!"
+  shared:
+    navbar:
+      management: "Управление"
