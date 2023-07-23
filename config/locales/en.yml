@@ -123,6 +123,7 @@ en:
     welcome: "Welcome, %{first_name} guru!"
     unauthorized: "Unauthorized to see this page"
     welcome_flash: "Welcome, %{first_name}!"
+    management: "Management"
 
   test_passages:
     result:
