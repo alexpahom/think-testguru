@@ -10,14 +10,17 @@ class GistQuestionService
 
   def call
     @client.create_gist(params).yield_self { |response| retrieve_url response }
-  rescue Octokit::Unauthorized => e
-    { error: e.message }
+  rescue Octokit::Unauthorized => _e
+    OpenStruct.new(success?: false)
   end
 
   private
 
   def retrieve_url(response)
-    { url: response[:html_url] }
+    OpenStruct.new(
+      success?: @client.last_response.status == 201,
+      url: response[:html_url]
+    )
   end
 
   def question_content
