@@ -10,6 +10,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap'
 import { Tooltip, Popover } from "bootstrap"
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 // The stylesheet location we created earlier
 require("../stylesheets/application.scss")
