@@ -29,13 +29,13 @@ gem 'rails-i18n'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap'
-gem 'dotenv-rails'
 gem 'jquery-rails'
 gem 'octokit', '~> 6.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
   gem 'rubocop', require: false
 end
 

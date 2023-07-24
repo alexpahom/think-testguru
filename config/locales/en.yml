@@ -158,5 +158,6 @@ en:
 
   gists:
     create:
-      success: "Gist successfully saved. Check %{link}"
+      success: "Gist successfully saved. Check it %{link}"
+      link: "here"
       failure: "There was an error during saving"

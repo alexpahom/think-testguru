@@ -10,9 +10,12 @@ class GistsController < ApplicationController
       question: @test_passage.current_question
     )
     flash_options = if result.success? && gist.save
-                      { notice: t('.success', link: result.url) }
+                      { notice:
+                          t('.success',
+                            link: view_context.link_to(t('.link'), result.url, target: '_blank'))
+                      }
                     else
-                      { alert: t('.failure') }
+                      {}
                     end
     redirect_to @test_passage, flash_options
   end

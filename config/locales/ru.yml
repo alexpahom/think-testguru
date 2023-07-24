@@ -127,5 +127,6 @@ ru:
 
   gists:
     create:
-      success: "Gist успешно сохранен. Ссылка - %{link}"
+      success: "Gist успешно сохранен. Ссылка %{link}"
+      link: "здесь"
       failure: "При сохранении произошла ошибка"
