@@ -12,4 +12,7 @@
   <%= @answer.correct %>
 </p>
 
-<%= link_to t('general.back'), admin_question_path(@answer.question) %>
+<%= link_to admin_question_path(@answer.question), class: 'btn btn-lg' do %>
+  <%= content_tag :i, nil, class: 'bi bi-arrow-return-left' %>
+  <%= t('general.back') %>
+<% end %>

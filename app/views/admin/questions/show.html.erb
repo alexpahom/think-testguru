@@ -1,12 +1,26 @@
 <h3><%= @question.body %></h3>
 
-<h4><%= t('.answers_header')%></h4>
+<h4><%= t('.answers_header') %></h4>
 
-<%= link_to t('.add_answer'), new_admin_question_answer_path(@question) %>
+<div class="col-6 p-3">
+  <table class="table table-hover align-middle">
+    <%= render @question.answers %>
+  </table>
+</div>
 
-<ol>
-  <%= render @question.answers %>
-</ol>
+<span>
+  <%= link_to new_admin_question_answer_path(@question), class: 'btn btn-lg' do %>
+    <%= content_tag :i, nil, class: 'bi bi-plus-circle' %>
+    <%= t('.add_answer') %>
+  <% end %>
 
-<%= link_to t('admin.actions.edit'), edit_admin_question_path(@question) %> |
-<%= link_to t('general.back'), admin_test_path(@question.test) %>
+  <%= link_to edit_admin_answer_path(@question), class: 'btn btn-lg' do %>
+    <%= content_tag :i, nil, class: 'bi bi-pencil' %>
+    <%= t('admin.actions.edit') %>
+  <% end %>
+
+  <%= link_to admin_test_path(@question.test), class: 'btn btn-lg' do %>
+    <%= content_tag :i, nil, class: 'bi bi-arrow-return-left' %>
+    <%= t('general.back') %>
+  <% end %>
+</span>
