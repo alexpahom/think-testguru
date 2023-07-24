@@ -14,7 +14,7 @@
     <%= t('.add_answer') %>
   <% end %>
 
-  <%= link_to edit_admin_answer_path(@question), class: 'btn btn-lg' do %>
+  <%= link_to edit_admin_question_path(@question), class: 'btn btn-lg' do %>
     <%= content_tag :i, nil, class: 'bi bi-pencil' %>
     <%= t('admin.actions.edit') %>
   <% end %>
