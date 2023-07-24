@@ -7,4 +7,7 @@
   <p><%= t('.test_failed') %></p>
   <p><%= t('.score') %>: <span class="test-failed"><%= @test_passage.pass_rate_percents %>%</span></p>
 <% end %>
-<%= link_to t('general.back'), tests_path %>
+<%= link_to tests_path, class: 'btn btn-lg' do %>
+  <%= content_tag :i, nil, class: 'bi bi-arrow-return-left' %>
+  <%= t('general.back') %>
+<% end %>
