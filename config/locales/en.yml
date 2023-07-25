@@ -112,6 +112,12 @@ en:
         success: "Answer added"
       destroy:
         success: "Answer deleted"
+    gists:
+      index:
+        question: "Question"
+        url: "URL"
+        email: "Author email"
+        gist_list_header: "Gist List"
 
   general:
     errors: "Errors"
@@ -124,6 +130,7 @@ en:
     unauthorized: "Unauthorized to see this page"
     welcome_flash: "Welcome, %{first_name}!"
     management: "Management"
+    gist_list: "Gist list"
 
   test_passages:
     result:
@@ -135,6 +142,7 @@ en:
       in_progress_header: "Passing %{title} test"
       questions_progress: "Question %{current} out of %{total}"
       next: "Next"
+      gist_question: "Gist Question"
     update:
       test_completed: "Test completed!"
 
@@ -147,3 +155,9 @@ en:
       question_count: "Question count"
     start:
       start: "Let's roll!"
+
+  gists:
+    create:
+      success: "Gist successfully saved. Check it %{link}"
+      link: "here"
+      failure: "There was an error during saving"
