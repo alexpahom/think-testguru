@@ -1,6 +1,15 @@
 <h3><%= @test.title %></h3>
-<%= link_to t('.create'), new_admin_test_question_path(@test) %>
-<%= link_to t('general.back'), admin_tests_path %>
-<table>
+
+<table class="table table-hover p-3">
   <%= render @test.questions %>
 </table>
+<span>
+  <%= link_to new_admin_test_question_path(@test), class: 'btn btn-lg' do %>
+    <%= content_tag :i, nil, class: 'bi bi-plus-circle' %>
+    <%= t('.create') %>
+  <% end %>
+  <%= link_to admin_tests_path, class: 'btn btn-lg' do %>
+    <%= content_tag :i, nil, class: 'bi bi-arrow-return-left' %>
+    <%= t('general.back') %>
+  <% end %>
+</span>

@@ -1,9 +1,16 @@
-<%= form_with model: [:admin, @test, @question], local: true do |form| %>
-  <%= render 'shared/errors', resource: @question %>
-  <p>
-    <%= form.label :body, t('.body') %>
-    <%= form.text_field :body, id: :question_body %>
-  </p>
-  <p><%= form.submit %></p>
-  <p><%= link_to t('general.back'), admin_test_path(@question.test) %></p>
-<% end %>
+<div class="col-md-5 p-3">
+  <%= form_with model: [:admin, @test, @question], local: true do |form| %>
+    <%= render 'shared/errors', resource: @question %>
+    <div class="mb-3">
+      <%= form.label :body, t('.body'), class: 'form-label' %>
+      <%= form.text_field :body, id: :question_body, class: 'form-control' %>
+    </div>
+    <%= form.submit nil, class: 'btn btn-primary btn-lg' %>
+    <span>
+      <%= link_to admin_test_path(@question.test), class: 'btn btn-lg' do %>
+        <%= content_tag :i, nil, class: 'bi bi-arrow-return-left' %>
+        <%= t('general.back') %>
+      <% end %>
+    </span>
+  <% end %>
+</div>

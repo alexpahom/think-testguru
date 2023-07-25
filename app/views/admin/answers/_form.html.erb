@@ -1,15 +1,19 @@
 <%= form_with model: [:admin, @question, @answer], local: true do |form| %>
   <%= render 'shared/errors', resource: @answer %>
 
-  <p>
-    <%= form.label :body, t('.answer_text') %>
-    <%= form.text_area :body, id: :answer_body, rows: 7, cols: 60 %>
-  </p>
-  <p>
-    <%= form.label :correct, t('.correct') %>
-    <%= form.check_box :correct, id: :answer_correct %>
-  </p>
-  <div class="actions">
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.label :body, t('.answer_text'), class: 'form-label' %>
+    <%= form.text_area :body, id: :answer_body, rows: 7, cols: 60, class: 'form-control' %>
   </div>
+  <div class="mb-3">
+    <%= form.label :correct, t('.correct'), class: 'form-check-label' %>
+    <%= form.check_box :correct, id: :answer_correct, class: 'form-check-input' %>
+  </div>
+  <%= form.submit nil, class: 'btn btn-primary btn-lg'%>
+  <span>
+  <%= link_to admin_question_path(@question || @answer.question), class: 'btn btn-lg' do %>
+    <%= content_tag :i, nil, class: 'bi bi-arrow-return-left' %>
+      <%= t('general.back') %>
+  <% end %>
+</span>
 <% end %>
