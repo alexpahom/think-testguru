@@ -1,7 +1,11 @@
 document.addEventListener('turbolinks:load', () => {
-    document
-        .querySelectorAll('#test-title')
-        .forEach(node => node.addEventListener('click', sortByColText))
+    let testTitleHeader = document.getElementById('test-title')
+    let passwordConfirm = document.getElementById('password-confirmation')
+    let password = document.getElementById('password')
+
+    testTitleHeader && testTitleHeader.addEventListener('click', sortByColText)
+    passwordConfirm && passwordConfirm.addEventListener('input', checkPasswordMatch)
+    password && password.addEventListener('input', checkPasswordMatch)
 });
 
 function sortByColText() {
@@ -50,4 +54,26 @@ function compareRowsDesc(row1, row2) {
     if (title1 < title2) { return 1 }
     if (title1 > title2) { return -1 }
     return 0
+}
+
+function checkPasswordMatch() {
+    const password = document.getElementById('password')
+    const confirm = document.getElementById('password-confirmation')
+    let error = confirm.parentElement.querySelector('em')
+    if (error === null) {
+        error = document.createElement('em')
+        error.classList.add('position-absolute')
+        confirm.parentElement.appendChild(error)
+    }
+    if (confirm.value === '') {
+        error.textContent = ''
+    } else if (confirm.value !== password.value) {
+        error.classList.remove('text-success')
+        error.classList.add('text-danger')
+        error.textContent = 'Passwords do not match'
+    } else {
+        error.classList.remove('text-danger')
+        error.classList.add('text-success')
+        error.textContent = 'Passwords match'
+    }
 }
