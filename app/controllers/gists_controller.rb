@@ -5,14 +5,14 @@ class GistsController < ApplicationController
     result = GistQuestionService.new(@test_passage.current_question).call
 
     flash_options = if result.success?
-                      Gist.create(
+                      Gist.create!(
                         author_email: current_user.email,
                         github_url: result.url,
                         question: @test_passage.current_question
                       )
                       { notice: t('.success', link: view_context.link_to(t('.link'), result.url, target: '_blank')) }
                     else
-                      {}
+                      { notice: t('.failure') }
                     end
     redirect_to @test_passage, flash_options
   end
