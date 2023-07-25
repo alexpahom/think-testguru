@@ -1,9 +1,15 @@
 <h3><%= t('.test_list_header') %></h3>
 <div class="row">
-  <div class="col-md-7">
+  <div class="col-md-10">
     <table class="table table-borderless table-hover align-middle ms-5">
       <tr>
-        <th><%= t('.title') %></th>
+        <th id="test-title" class="pointer">
+          <%= t('.title') %>
+          <div class="float-end">
+            <%= content_tag :i, nil, class: 'bi bi-arrow-up d-none sort-asc' %>
+            <%= content_tag :i, nil, class: 'bi bi-arrow-down d-none sort-desc' %>
+          </div>
+        </th>
         <th><%= t('.question_count') %> </th>
       </tr>
       <%= render @tests %>

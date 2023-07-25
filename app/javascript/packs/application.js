@@ -11,10 +11,10 @@ import "channels"
 import 'bootstrap'
 import { Tooltip, Popover } from "bootstrap"
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import './global'
 
 // The stylesheet location we created earlier
 require("../stylesheets/application.scss")
-
 
 Rails.start()
 Turbolinks.start()
