@@ -3,14 +3,20 @@
   <div class="col-md-10">
     <table class="table table-borderless table-hover align-middle ms-5">
       <tr>
-        <th id="test-title" class="pointer">
+        <th class="pointer sortable">
           <%= t('.title') %>
           <div class="float-end">
             <%= content_tag :i, nil, class: 'bi bi-arrow-up d-none sort-asc' %>
             <%= content_tag :i, nil, class: 'bi bi-arrow-down d-none sort-desc' %>
           </div>
         </th>
-        <th><%= t('.question_count') %> </th>
+        <th class="pointer sortable">
+          <%= t('.question_count') %>
+          <div class="float-end">
+            <%= content_tag :i, nil, class: 'bi bi-arrow-up d-none sort-asc' %>
+            <%= content_tag :i, nil, class: 'bi bi-arrow-down d-none sort-desc' %>
+          </div>
+        </th>
       </tr>
       <%= render @tests %>
     </table>

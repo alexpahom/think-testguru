@@ -11,8 +11,8 @@ import "channels"
 import 'bootstrap'
 import { Tooltip, Popover } from "bootstrap"
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import './global'
-
+import '../utils/tableHeaderSorting'
+import '../utils/passwordConfirmationValidator'
 // The stylesheet location we created earlier
 require("../stylesheets/application.scss")
 
