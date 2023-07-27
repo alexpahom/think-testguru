@@ -30,6 +30,7 @@
     <%= f.label :password_confirmation, 'Подтверждение пароля', class: 'form-label' %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password",
                          id: 'password-confirmation', class: 'form-control' %>
+    <em id="confirmation-alert" class="position-absolute"></em>
   </div>
   <div class="mb-3">
     <%= f.submit 'Создать', class: 'btn btn-primary btn-lg' %>
