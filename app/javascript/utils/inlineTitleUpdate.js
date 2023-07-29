@@ -1,19 +1,16 @@
 document.addEventListener('turbolinks:load', function () {
-    $('.form-inline-link').on('click', formInlineLinkHandler)
+    let $formInline = $('.form-inline-link')
+    $formInline.on('click', formInlineLinkHandler)
 
     const errors = document.querySelector('.resource-errors')
 
-    if (errors) {
-        const resourceId = errors.dataset.resourceId
-        formInlineHandler(resourceId)
-    }
+    if (errors && $formInline.length) formInlineHandler(errors.dataset.resourceId)
 })
 
 function formInlineLinkHandler(event) {
     event.preventDefault()
 
-    let testId = this.dataset.testId
-    formInlineHandler(testId)
+    formInlineHandler(this.dataset.testId)
 }
 
 function formInlineHandler(testId) {
