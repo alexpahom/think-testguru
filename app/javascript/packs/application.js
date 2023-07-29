@@ -15,7 +15,7 @@ import 'jquery'
 import '../utils/tableHeaderSorting'
 import '../utils/passwordConfirmationValidator'
 import '../utils/inlineTitleUpdate'
-// The stylesheet location we created earlier
+import '../utils/testPassageProgressBar'
 require("../stylesheets/application.scss")
 
 Rails.start()
