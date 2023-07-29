@@ -11,8 +11,10 @@ import "channels"
 import 'bootstrap'
 import { Tooltip, Popover } from "bootstrap"
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'jquery'
 import '../utils/tableHeaderSorting'
 import '../utils/passwordConfirmationValidator'
+import '../utils/inlineTitleUpdate'
 // The stylesheet location we created earlier
 require("../stylesheets/application.scss")
 

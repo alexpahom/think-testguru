@@ -43,6 +43,8 @@ ru:
         success: "Тест изменен"
       destroy:
         success: "Тест удален"
+      form_inline:
+        submit: "OK"
 
     questions:
       question:
