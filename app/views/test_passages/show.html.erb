@@ -4,9 +4,12 @@
 
 <%= render 'shared/errors', resource: @test_passage %>
 
-<p class="progress">
-  <%= t('.questions_progress', current: current_question_number, total: total_questions_count) %>
-</p>
+<div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+  <%= content_tag :div, nil, class: 'progress-bar overflow-visible bg-primary',
+                  data: { progress_percent: current_progress_percents } do %>
+    <%= t('.questions_progress', current: current_question_number, total: total_questions_count) %>
+  <% end %>
+</div>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body do |a| %>

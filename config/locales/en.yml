@@ -74,6 +74,8 @@ en:
         success: "Test has been updated"
       destroy:
         success: "Test deleted"
+      form_inline:
+        submit: "OK"
 
     questions:
       question:

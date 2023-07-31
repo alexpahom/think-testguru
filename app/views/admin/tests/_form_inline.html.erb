@@ -1,0 +1,7 @@
+<%= form_with model: [:admin, test], url: update_inline_admin_test_path(test), local: true,
+              class: 'form-inline',
+              data: { test_id: test.id },
+              html: { style: 'display: none' } do |f| %>
+  <%= f.text_field :title, class: 'from-control mr-2' %>
+  <%= f.submit t('.submit'), class: 'btn btn-primary btn-sm' %>
+<% end %>

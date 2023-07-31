@@ -11,9 +11,11 @@ import "channels"
 import 'bootstrap'
 import { Tooltip, Popover } from "bootstrap"
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'jquery'
 import '../utils/tableHeaderSorting'
 import '../utils/passwordConfirmationValidator'
-// The stylesheet location we created earlier
+import '../utils/inlineTitleUpdate'
+import '../utils/testPassageProgressBar'
 require("../stylesheets/application.scss")
 
 Rails.start()
