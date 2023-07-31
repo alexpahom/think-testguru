@@ -1,7 +1,12 @@
-<footer class="footer">
+<footer class="footer p-2">
   <div>
-    <p><%= current_year %> <%= github_url('alexpahom', 'think-testguru') %></p>
-    <p>Пахомчик Александр</p>
+    <p><span>
+      <%= current_year %> <%= github_url('alexpahom', 'think-testguru') %> Пахомчик Александр
+    </span>
+    </p>
+    <p>
+      <%= link_to t('general.feedback'), new_feedback_path, target: '_blank' %>
+    </p>
     <p>
       <%= link_to t('general.thinknetica_link'),
                   'https://thinknetica.com/',

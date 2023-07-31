@@ -102,6 +102,7 @@ ru:
     welcome_flash: "Привет, %{first_name}!"
     management: "Управление"
     gist_list: "Список gist"
+    feedback: "Обратная связь"
 
   test_passages:
     result:
@@ -132,3 +133,9 @@ ru:
       success: "Gist успешно сохранен. Ссылка %{link}"
       link: "здесь"
       failure: "При сохранении произошла ошибка"
+  feedback:
+    new:
+      create_feedback_header: "Оставьте отзыв"
+      feedback_text_label: "Ваш отзыв"
+    create:
+      feedback_sent_message: "Спасибо, что написали!"
