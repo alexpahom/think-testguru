@@ -29,3 +29,4 @@ production:
   database: production
   host: db.hsmsktgtlmcozdwzdfer.supabase.co
   username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
