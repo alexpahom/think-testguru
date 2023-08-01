@@ -2,10 +2,16 @@
 
 <% if @test_passage.passed? %>
   <p><%= t('.test_passed')%></p>
-  <p><%= t('.score') %>: <span class="test-passed"><%= @test_passage.pass_rate_percents %>%</span></p>
+  <p>
+    <%= t('.score') %>
+    <%= content_tag :span, @test_passage.pass_rate_percents, class: 'text-success fw-semibold' %> %
+  </p>
 <% else %>
   <p><%= t('.test_failed') %></p>
-  <p><%= t('.score') %>: <span class="test-failed"><%= @test_passage.pass_rate_percents %>%</span></p>
+  <p>
+    <%= t('.score') %>
+    <%= content_tag :span, @test_passage.pass_rate_percents, class: 'text-danger fw-semibold' %> %
+  </p>
 <% end %>
 <%= link_to tests_path, class: 'btn btn-lg' do %>
   <%= content_tag :i, nil, class: 'bi bi-arrow-return-left' %>
