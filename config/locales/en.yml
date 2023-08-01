@@ -133,6 +133,7 @@ en:
     welcome_flash: "Welcome, %{first_name}!"
     management: "Management"
     gist_list: "Gist list"
+    feedback: "Feedback"
 
   test_passages:
     result:
@@ -163,3 +164,9 @@ en:
       success: "Gist successfully saved. Check it %{link}"
       link: "here"
       failure: "There was an error during saving"
+  feedback:
+    new:
+      create_feedback_header: "Leave feedback"
+      feedback_text_label: "Your feedback"
+    create:
+      feedback_sent_message: "Thank you for your feedback!"

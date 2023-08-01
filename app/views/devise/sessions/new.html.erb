@@ -1,6 +1,7 @@
 <div class="row justify-content-center">
   <div class="col col-md-4">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'text-center' }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name),
+                 html: { class: 'text-center', id: 'login' }) do |f| %>
       <div class="form-group">
         <%= image_tag 'logo.png' %>
         <h2><%= t('general.login') %></h2>

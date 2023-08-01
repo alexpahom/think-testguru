@@ -1,7 +1,8 @@
 module ApplicationHelper
 
   def github_url(author, repo)
-    link_to 'Test Guru', "https://github.com/#{author}/#{repo}", target: '_blank', rel: 'nofollow'
+    link_to 'Test Guru', "https://github.com/#{author}/#{repo}", target: '_blank', rel: 'nofollow',
+            class: 'text-secondary'
   end
 
   def current_year

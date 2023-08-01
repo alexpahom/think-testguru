@@ -1,14 +1,16 @@
-<h3><%= t('.in_progress_header', title: @test_passage.test.title) %></h3>
-
-<b><%= @test_passage.current_question.body %></b>
-
 <%= render 'shared/errors', resource: @test_passage %>
 
-<div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+<h3 class="mb-2"><%= t('.in_progress_header', title: @test_passage.test.title) %></h3>
+
+<div class="progress mb-5" role="progressbar" aria-valuemin="0" aria-valuemax="100">
   <%= content_tag :div, nil, class: 'progress-bar overflow-visible bg-primary',
                   data: { progress_percent: current_progress_percents } do %>
     <%= t('.questions_progress', current: current_question_number, total: total_questions_count) %>
   <% end %>
+</div>
+
+<div class="mb-3">
+  <p class="fs-3"><%= @test_passage.current_question.body %></p>
 </div>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
@@ -19,13 +21,15 @@
     </div>
   <% end %>
 
-  <%= button_tag class: 'btn btn-primary btn-lg' do %>
-    <%= content_tag :i, nil, class: 'bi bi-arrow-return-right' %>
-    <%= t('.next') %>
-  <% end %>
+  <div class="mt-5">
+    <%= button_tag class: 'btn btn-primary btn-lg' do %>
+      <%= content_tag :i, nil, class: 'bi bi-arrow-return-right' %>
+      <%= t('.next') %>
+    <% end %>
 
-  <%= link_to gists_path(test_passage_id: @test_passage.id), method: :post, class: 'btn btn-lg' do %>
-    <%= content_tag :i, nil, class: 'bi bi-github' %>
-    <%= t('.gist_question') %>
-  <% end %>
+    <%= link_to gists_path(test_passage_id: @test_passage.id), method: :post, class: 'btn btn-lg' do %>
+      <%= content_tag :i, nil, class: 'bi bi-github' %>
+      <%= t('.gist_question') %>
+    <% end %>
+  </div>
 <% end %>
