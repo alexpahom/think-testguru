@@ -31,6 +31,10 @@ class TestPassage < ApplicationRecord
     created_at + test.time_limit.seconds < Time.now
   end
 
+  def finish_by
+    (created_at + test.time_limit.seconds).iso8601
+  end
+
   private
 
   def before_validation_set_question

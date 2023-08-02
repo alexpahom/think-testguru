@@ -9,17 +9,18 @@
   <% end %>
 </div>
 
+<% if @test_passage.test.time_limit %>
+  <%= content_tag :div, nil, id: 'timer-container',
+                  data: { limit: @test_passage.test.time_limit },
+                  class: 'fw-semibold float-end' %>
+<% end %>
+
 <div class="mb-3">
   <p class="fs-3"><%= @test_passage.current_question.body %></p>
 </div>
 
-<% if @test_passage.test.time_limit %>
-  <%= content_tag :div, nil, id: 'timer-container',
-                  data: { limit: @test_passage.test.time_limit },
-                  class: 'fw-semibold' %>
-<% end %>
-
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+<%= form_with url: test_passage_path(@test_passage), local: true, method: :put,
+              html: { id: 'attempt' } do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body do |a| %>
     <div class="form-check m-3">
       <%= a.check_box id: "answer_id_#{a.object.id}", class: 'form-check-input' %>

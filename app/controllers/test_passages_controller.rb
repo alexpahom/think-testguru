@@ -2,7 +2,9 @@ class TestPassagesController < ApplicationController
 
   before_action :set_test_passage
 
-  def show; end
+  def show
+    set_time_limit_cookie
+  end
 
   def result; end
 
@@ -21,5 +23,9 @@ class TestPassagesController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def set_time_limit_cookie
+    cookies[:finish_by] = @test_passage.finish_by
   end
 end
