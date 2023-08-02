@@ -16,6 +16,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        time_limit: "Лимит времени (сек)"
 
     select:
       prompt: "Выберите:"
@@ -35,6 +36,7 @@ ru:
       index:
         actions: "Действия"
         create: "Создать тест"
+        time_limit: "Лимит времени"
       show:
         create: "Создать вопрос"
       create:
@@ -117,6 +119,7 @@ ru:
       gist_question: "Сохранить как gist"
     update:
       test_completed: "Тест окончен!"
+      time_is_up: "Время вышло"
 
   tests:
     test:
@@ -125,6 +128,7 @@ ru:
       test_list_header: "Список тестов"
       title: "Название"
       question_count: "Кол-во вопросов"
+      time_limit: "Лимит времени (сек)"
     start:
       start: "Погнали!"
 
