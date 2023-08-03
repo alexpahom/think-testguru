@@ -2,14 +2,18 @@ class TestPassagesController < ApplicationController
 
   before_action :set_test_passage
 
-  def show; end
+  def show
+    set_time_limit_cookie
+  end
 
   def result; end
 
   def update
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
-      redirect_to result_test_passage_path(@test_passage), notice: t('.test_completed')
+      notice_text =
+        @test_passage.time_is_up? ? t('.time_is_up') : t('.test_completed')
+      redirect_to result_test_passage_path(@test_passage), notice: notice_text
     else
       render :show
     end
@@ -19,5 +23,9 @@ class TestPassagesController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def set_time_limit_cookie
+    cookies[:finish_by] = @test_passage.finish_by
   end
 end

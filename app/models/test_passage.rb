@@ -9,12 +9,14 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_question, on: %i[create update]
 
   def accept!(answer_ids)
+    return if time_is_up?
     self.correct_answers_made += 1 if correct_answer?(answer_ids)
     save!
   end
 
   def completed?
-    current_question.nil?
+    return true if time_is_up?
+    self.completed_at = Time.now if current_question.nil?
   end
 
   def passed?
@@ -23,6 +25,14 @@ class TestPassage < ApplicationRecord
 
   def pass_rate_percents
     (correct_answers_made * 100 / test.total_correct_answers_count).round
+  end
+
+  def time_is_up?
+    created_at + test.time_limit.seconds < Time.now
+  end
+
+  def finish_by
+    (created_at + test.time_limit.seconds).iso8601
   end
 
   private
