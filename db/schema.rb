@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_01_200732) do
+ActiveRecord::Schema.define(version: 2023_08_03_194322) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
   enable_extension "plpgsql"
+
+  create_table "achievements", force: :cascade do |t|
+    t.string "text", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["text"], name: "index_achievements_on_text", unique: true
+  end
 
   create_table "answers", force: :cascade do |t|
     t.text "body"
@@ -22,6 +30,21 @@ ActiveRecord::Schema.define(version: 2023_08_01_200732) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "badge_images", force: :cascade do |t|
+    t.string "url", null: false
+    t.bigint "badge_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id"], name: "index_badge_images_on_badge_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -45,6 +68,16 @@ ActiveRecord::Schema.define(version: 2023_08_01_200732) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["test_id"], name: "index_questions_on_test_id"
+  end
+
+  create_table "rules", force: :cascade do |t|
+    t.hstore "options"
+    t.bigint "achievement_id", null: false
+    t.bigint "badge_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["achievement_id"], name: "index_rules_on_achievement_id"
+    t.index ["badge_id"], name: "index_rules_on_badge_id"
   end
 
   create_table "test_passages", force: :cascade do |t|
@@ -96,11 +129,24 @@ ActiveRecord::Schema.define(version: 2023_08_01_200732) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_badges", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "badge_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id"], name: "index_users_badges_on_badge_id"
+    t.index ["user_id"], name: "index_users_badges_on_user_id"
+  end
+
   add_foreign_key "answers", "questions"
   add_foreign_key "gists", "questions"
   add_foreign_key "questions", "tests"
+  add_foreign_key "rules", "achievements"
+  add_foreign_key "rules", "badges"
   add_foreign_key "test_passages", "tests"
   add_foreign_key "test_passages", "users"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users", column: "author_id"
+  add_foreign_key "users_badges", "badges"
+  add_foreign_key "users_badges", "users"
 end
