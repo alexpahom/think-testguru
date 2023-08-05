@@ -12,7 +12,7 @@
   <div class="row">
     <div class="mb-3 form-check w-50">
       <%= f.collection_radio_buttons :rule_template_id, RuleTemplate.all, :id, :text do |b| %>
-        <%= b.label(class: 'form-check-label mx-4 d-block') do %>
+        <%= b.label(class: "form-check-label mx-4 d-block #{'disabled' unless b.object.available?}") do %>
           <%= b.radio_button(class: 'form-check-input', data: { option: b.object.option_key }) + b.text %>
         <% end %>
       <% end %>

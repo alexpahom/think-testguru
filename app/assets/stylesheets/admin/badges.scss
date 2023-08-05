@@ -19,3 +19,8 @@
     border: 3px solid teal;
   }
 }
+
+label.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
