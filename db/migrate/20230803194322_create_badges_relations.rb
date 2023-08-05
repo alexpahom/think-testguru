@@ -18,7 +18,7 @@ class CreateBadgesRelations < ActiveRecord::Migration[6.1]
     create_table :badges do |t|
       t.string :name, null: false, unique: true
       t.string :description, null: false
-      t.hstore :rule_options
+      t.string :rule_options
       t.references :rule_template, null: false, foreign_key: true
       t.references :badge_image, null: false, foreign_key: true
 

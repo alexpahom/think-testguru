@@ -4,10 +4,10 @@ class BadgeIssuerService
 
   RULES_MAPPING = {
     first_test: BadgeRules::FirstTestRule,
-    # { text: 'all_tests_of_category' },
-    # { text: 'at_first_try' },
-    # { text: 'pass_after_fail' },
-    # { text: 'n_tests_in_row' },
+    all_tests_of_category: BadgeRules::AllTestsOfCategoryRule,
+    at_first_try: BadgeRules::AtFirstTryRule,
+    pass_after_fail: BadgeRules::PassAfterFailRule,
+    n_tests_in_row: BadgeRules::NTestsInRowRule,
     # { text: 'n_tests' },
     # { text: 'all_tests_of_level' },
     # { text: 'all_tests' },
@@ -22,7 +22,8 @@ class BadgeIssuerService
   end
 
   def scan_for_reward
-    Badge.where.not(id: @test_passage.user.users_badges).each do |badge|
+    received_badge_ids = @test_passage.user.users_badges.pluck(:badge_id)
+    Badge.where.not(id: received_badge_ids).each do |badge|
       klass = RULES_MAPPING[badge.rule_template.text.to_sym]
       reward(badge) if klass.new(@test_passage, badge).meet_criteria?
     end

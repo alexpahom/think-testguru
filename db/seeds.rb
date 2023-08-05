@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-[TestPassage, Answer, Question, Test, Category, User, RuleTemplate, BadgeImage].each(&:delete_all)
+[UsersBadge, Badge, TestPassage, Answer, Question, Test, Category, User, RuleTemplate, BadgeImage].each(&:delete_all)
 users = User.create!([
                        { first_name: 'Борис', last_name: 'Бритва', email: 'fox@test.com', password: 'Test123',
                          type: 'Admin', confirmed_at: Time.now },
@@ -75,7 +75,7 @@ end
 
 RuleTemplate.create!([
                       { text: 'first_test' },
-                      { text: 'all_tests_of_category', option_key: 'category_id' },
+                      { text: 'all_tests_of_category', option_key: 'category_title' },
                       { text: 'at_first_try' },
                       { text: 'pass_after_fail' },
                       { text: 'n_tests_in_row', option_key: 'count' },
