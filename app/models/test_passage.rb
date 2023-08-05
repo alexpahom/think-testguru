@@ -28,7 +28,7 @@ class TestPassage < ApplicationRecord
   end
 
   def time_is_up?
-    created_at + test.time_limit.seconds < Time.now
+    test.time_limit && created_at + test.time_limit.seconds < Time.now
   end
 
   def finish_by
