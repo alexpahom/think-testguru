@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2023_08_03_194322) do
 
   create_table "rule_templates", force: :cascade do |t|
     t.string "text", null: false
+    t.string "option_key"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["text"], name: "index_rule_templates_on_text", unique: true

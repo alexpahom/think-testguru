@@ -17,6 +17,7 @@ import '../utils/passwordConfirmationValidator'
 import '../utils/inlineTitleUpdate'
 import '../utils/testPassageProgressBar'
 import '../utils/testPassageTimer'
+import '../utils/ruleOptionsProvider'
 require("../stylesheets/application.scss")
 
 Rails.start()

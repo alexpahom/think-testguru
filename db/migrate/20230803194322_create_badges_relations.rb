@@ -4,6 +4,7 @@ class CreateBadgesRelations < ActiveRecord::Migration[6.1]
   def change
     create_table :rule_templates do |t|
       t.string :text, null: false, index: { unique: true }
+      t.string :option_key
 
       t.timestamps
     end

@@ -75,14 +75,14 @@ end
 
 RuleTemplate.create!([
                       { text: 'first_test' },
-                      { text: 'all_tests_of_category' },
+                      { text: 'all_tests_of_category', option_key: 'category_id' },
                       { text: 'at_first_try' },
                       { text: 'pass_after_fail' },
-                      { text: 'n_tests_in_row' },
-                      { text: 'n_tests' },
-                      { text: 'all_tests_of_level' },
+                      { text: 'n_tests_in_row', option_key: 'count' },
+                      { text: 'n_tests', option_key: 'count' },
+                      { text: 'all_tests_of_level', option_key: 'level' },
                       { text: 'all_tests' },
-                      { text: 'n_badges' },
+                      { text: 'n_badges', option_key: 'count' },
                     ])
 # badges_icons = %w[
 # https://cdn-icons-png.flaticon.com/128/3185/3185187.png
