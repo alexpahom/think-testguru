@@ -27,7 +27,7 @@
     <%= label :'images-container', 'Pick you Icon', class: 'form-label' %>
     <div class="overflow-y-auto form-control" id="images-container">
       <%= f.collection_radio_buttons :badge_image_id, BadgeImage.all, :id, :url do |b| %>
-        <%= b.label do %>
+        <%= b.label(class: "#{'disabled' unless b.object.available?}") do %>
           <%= b.radio_button(class: 'invisible') +
                 (content_tag :div, image_tag(b.object.url, size: '50x50'),
                              class: 'image-cell d-flex justify-content-center align-items-center') %>

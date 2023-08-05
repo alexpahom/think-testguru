@@ -23,4 +23,8 @@
 label.disabled {
   pointer-events: none;
   opacity: 0.5;
+
+  img {
+    filter: grayscale(1);
+  }
 }
