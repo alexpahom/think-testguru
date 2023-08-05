@@ -16,13 +16,6 @@ ActiveRecord::Schema.define(version: 2023_08_03_194322) do
   enable_extension "hstore"
   enable_extension "plpgsql"
 
-  create_table "achievements", force: :cascade do |t|
-    t.string "text", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["text"], name: "index_achievements_on_text", unique: true
-  end
-
   create_table "answers", force: :cascade do |t|
     t.text "body"
     t.boolean "correct", default: false, null: false
@@ -34,17 +27,20 @@ ActiveRecord::Schema.define(version: 2023_08_03_194322) do
 
   create_table "badge_images", force: :cascade do |t|
     t.string "url", null: false
-    t.bigint "badge_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["badge_id"], name: "index_badge_images_on_badge_id"
   end
 
   create_table "badges", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
+    t.hstore "rule_options"
+    t.bigint "rule_template_id", null: false
+    t.bigint "badge_image_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_image_id"], name: "index_badges_on_badge_image_id"
+    t.index ["rule_template_id"], name: "index_badges_on_rule_template_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -70,14 +66,11 @@ ActiveRecord::Schema.define(version: 2023_08_03_194322) do
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
-  create_table "rules", force: :cascade do |t|
-    t.hstore "options"
-    t.bigint "achievement_id", null: false
-    t.bigint "badge_id", null: false
+  create_table "rule_templates", force: :cascade do |t|
+    t.string "text", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["achievement_id"], name: "index_rules_on_achievement_id"
-    t.index ["badge_id"], name: "index_rules_on_badge_id"
+    t.index ["text"], name: "index_rule_templates_on_text", unique: true
   end
 
   create_table "test_passages", force: :cascade do |t|
@@ -139,10 +132,10 @@ ActiveRecord::Schema.define(version: 2023_08_03_194322) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "badges", "badge_images"
+  add_foreign_key "badges", "rule_templates"
   add_foreign_key "gists", "questions"
   add_foreign_key "questions", "tests"
-  add_foreign_key "rules", "achievements"
-  add_foreign_key "rules", "badges"
   add_foreign_key "test_passages", "tests"
   add_foreign_key "test_passages", "users"
   add_foreign_key "tests", "categories"

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 class BadgeImage < ApplicationRecord
-  belongs_to :badge, optional: true
+  has_one :badge
+
+  validates :url, presence: :true
 end

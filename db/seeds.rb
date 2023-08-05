@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-[TestPassage, Answer, Question, Test, Category, User].each(&:delete_all)
+[TestPassage, Answer, Question, Test, Category, User, RuleTemplate, BadgeImage].each(&:delete_all)
 users = User.create!([
                        { first_name: 'Борис', last_name: 'Бритва', email: 'fox@test.com', password: 'Test123',
                          type: 'Admin', confirmed_at: Time.now },
@@ -70,8 +70,20 @@ end
 
 50.times do |i|
   id = 3185100 + i
-  "https://cdn-icons-png.flaticon.com/128/3185/#{id}.png"
+  BadgeImage.create!(url: "https://cdn-icons-png.flaticon.com/128/3185/#{id}.png")
 end
+
+RuleTemplate.create!([
+                      { text: 'first_test' },
+                      { text: 'all_tests_of_category' },
+                      { text: 'at_first_try' },
+                      { text: 'pass_after_fail' },
+                      { text: 'n_tests_in_row' },
+                      { text: 'n_tests' },
+                      { text: 'all_tests_of_level' },
+                      { text: 'all_tests' },
+                      { text: 'n_badges' },
+                    ])
 # badges_icons = %w[
 # https://cdn-icons-png.flaticon.com/128/3185/3185187.png
 # https://cdn-icons-png.flaticon.com/128/3185/3185258.png

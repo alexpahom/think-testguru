@@ -1,0 +1,21 @@
+// Place all the styles related to the admin/badges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#images-container {
+  height: 300px;
+
+  .image-cell {
+    width: 100px;
+    height: 100px;
+
+    &:hover {
+      background-color: #BBBBBB;
+    }
+  }
+
+  input:checked + div {
+    background-color: #BBBBBB;
+    border: 3px solid teal;
+  }
+}
