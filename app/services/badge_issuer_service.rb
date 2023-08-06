@@ -3,11 +3,11 @@
 class BadgeIssuerService
 
   RULES_MAPPING = {
-    first_test: BadgeRules::FirstTestRule,
-    all_tests_of_category: BadgeRules::AllTestsOfCategoryRule,
-    at_first_try: BadgeRules::AtFirstTryRule,
-    pass_after_fail: BadgeRules::PassAfterFailRule,
-    n_tests_in_row: BadgeRules::NTestsInRowRule,
+    first_test:             BadgeRules::FirstTestRule,
+    all_tests_of_category:  BadgeRules::AllTestsOfCategoryRule,
+    at_first_try:           BadgeRules::AtFirstTryRule,
+    pass_after_fail:        BadgeRules::PassAfterFailRule,
+    n_tests_in_row:         BadgeRules::NTestsInRowRule,
     # { text: 'n_tests' },
     # { text: 'all_tests_of_level' },
     # { text: 'all_tests' },

@@ -9,6 +9,7 @@
           <%= link_to t('general.badge_management'), admin_badges_path %> |
           <%= link_to t('general.management'), admin_tests_path %> |
         <% end %>
+        <%= link_to t('general.badges'), badges_path %>
         <%= link_to t('general.logout'), destroy_user_session_path, method: :delete %>
       </span>
     <% else %>

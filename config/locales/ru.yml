@@ -136,6 +136,7 @@ ru:
     gist_list: "Список gist"
     feedback: "Обратная связь"
     badge_management: "Управление бейджами"
+    badges: "Бейджи"
 
   test_passages:
     result:
