@@ -179,6 +179,7 @@ en:
       questions_progress: "Question %{current} out of %{total}"
       next: "Next"
       gist_question: "Gist Question"
+      already_completed: "This attempt is over but feel free to take another test"
     update:
       test_completed: "Test completed!"
       time_is_up: "Time's up"

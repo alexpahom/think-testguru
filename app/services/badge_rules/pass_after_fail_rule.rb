@@ -5,9 +5,11 @@ module BadgeRules
     def meet_criteria?
       return unless @test_passage.passed?
 
-      @test_passage.user.test_passages.where(test: @test_passage.test)
+      previous_passage = @test_passage.user.test_passages.where(test: @test_passage.test)
                    .where.not(id: @test_passage)
-                   .any? { |t| !t.passed? }
+                   .order(completed_at: :desc)
+                   .limit(1).first
+      previous_passage && !previous_passage.passed?
     end
   end
 end

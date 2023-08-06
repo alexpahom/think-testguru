@@ -22,8 +22,7 @@ class BadgeIssuerService
   end
 
   def scan_for_reward
-    received_badge_ids = @test_passage.user.users_badges.pluck(:badge_id)
-    Badge.where.not(id: received_badge_ids).each do |badge|
+    Badge.all.each do |badge|
       klass = RULES_MAPPING[badge.rule_template.text.to_sym]
       reward(badge) if klass.new(@test_passage, badge).meet_criteria?
     end

@@ -3,7 +3,11 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage
 
   def show
-    set_time_limit_cookie
+    if @test_passage.completed?
+      redirect_to tests_path, notice: t('.already_completed')
+    else
+      set_time_limit_cookie
+    end
   end
 
   def result; end

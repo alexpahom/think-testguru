@@ -148,6 +148,7 @@ ru:
       questions_progress: "Вопрос %{current} из %{total}"
       next: "Далее"
       gist_question: "Сохранить как gist"
+      already_completed: "Данная попытка уже завершена, но Вы можете начать новый тест"
     update:
       test_completed: "Тест окончен!"
       time_is_up: "Время вышло"
