@@ -41,6 +41,9 @@ en:
       answer:
         create: "Create"
         update: "Save"
+      badge:
+        create: "Create"
+        update: "Save"
 
     label:
       test:
@@ -48,6 +51,11 @@ en:
         level: "Level"
         category_id: "Category"
         time_limit: "Time limit (sec)"
+      badge:
+        name: "Name"
+        description: "Description"
+        rule_options: "Rule options"
+        rule_template_id: "Rule"
 
     select:
       prompt: "Choose:"
@@ -122,6 +130,28 @@ en:
         url: "URL"
         email: "Author email"
         gist_list_header: "Gist List"
+    badges:
+      destroy:
+        success: "Badge deleted"
+      update:
+        success: "Badge updated"
+      create:
+        success: "Badge created"
+      form:
+        image_prompt: "Pick an image for badge"
+      new:
+        create_badge_header: "Create Badge"
+      edit:
+        edit_badge_header: "Edit Badge"
+      index:
+        name: "Name"
+        description: "Description"
+        rule: "Rule"
+        actions: "Actions"
+        no_badges_placeholder: "No badges yet"
+        new_badge_link: "Create badge"
+      show:
+        reward_for: "Reward for %{description}"
 
   general:
     errors: "Errors"
@@ -133,9 +163,10 @@ en:
     welcome: "Welcome, %{first_name} guru!"
     unauthorized: "Unauthorized to see this page"
     welcome_flash: "Welcome, %{first_name}!"
-    management: "Management"
+    management: "Test Management"
     gist_list: "Gist list"
     feedback: "Feedback"
+    badge_management: "Badge Management"
 
   test_passages:
     result:

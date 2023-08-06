@@ -11,6 +11,7 @@
 
   <div class="row">
     <div class="mb-3 form-check w-50">
+      <%= f.label :rule_template_id, class: 'form-label' %>
       <%= f.collection_radio_buttons :rule_template_id, RuleTemplate.all, :id, :text do |b| %>
         <%= b.label(class: "form-check-label mx-4 d-block #{'disabled' unless b.object.available?}") do %>
           <%= b.radio_button(class: 'form-check-input', data: { option: b.object.option_key }) + b.text %>
@@ -24,7 +25,7 @@
   </div>
 
   <div class="mb-3">
-    <%= label :'images-container', 'Pick you Icon', class: 'form-label' %>
+    <%= label :'images-container', t('.image_prompt'), class: 'form-label' %>
     <div class="overflow-y-auto form-control" id="images-container">
       <%= f.collection_radio_buttons :badge_image_id, BadgeImage.all, :id, :url do |b| %>
         <%= b.label(class: "#{'disabled' unless b.object.available?}") do %>
@@ -38,7 +39,7 @@
   </div>
 
   <div class="form-group my-5">
-    <%= f.submit 'Save', class: 'btn btn-primary btn-lg' %>
-    <%= link_to 'Back', admin_badges_path, class: 'btn btn-lg' %>
+    <%= f.submit nil, class: 'btn btn-primary btn-lg' %>
+    <%= link_to t('general.back'), admin_badges_path, class: 'btn btn-lg' %>
   </div>
 <% end %>

@@ -17,23 +17,23 @@ class Admin::BadgesController < ApplicationController
   def create
     @badge = Badge.new(badge_params)
     if @badge.save
-      redirect_to [:admin, @badge], success: 'ok'
+      redirect_to [:admin, @badge], success: t('.success')
     else
-      redirect_to new_admin_badge_path, alert: 'error'
+      redirect_to new_admin_badge_path, alert: alert_messages_for(@badge)
     end
   end
 
   def update
     if @badge.update(badge_params)
-      redirect_to [:admin, @badge], success: 'ok'
+      redirect_to [:admin, @badge], success: t('.success')
     else
-      redirect_to edit_admin_badge_path(@badge), alert: 'error'
+      redirect_to edit_admin_badge_path(@badge), alert: alert_messages_for(@badge)
     end
   end
 
   def destroy
     @badge.destroy
-    redirect_to admin_badges_path, success: 'deleted'
+    redirect_to admin_badges_path, success: t('.success')
   end
 
   private

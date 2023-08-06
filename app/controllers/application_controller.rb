@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!, :set_locale
   before_action :configure_sign_up_params, if: :devise_controller?
 
+  add_flash_types :success
+
   def alert_messages_for(entity)
     entity.errors.full_messages.to_sentence
   end

@@ -10,6 +10,9 @@ ru:
       answer:
         create: "Создать"
         update: "Сохранить"
+      badge:
+        create: "Создать"
+        update: "Сохранить"
 
     label:
       test:
@@ -17,6 +20,11 @@ ru:
         level: "Уровень"
         category_id: "Категория"
         time_limit: "Лимит времени (сек)"
+      badge:
+        name: "Название"
+        description: "Описание"
+        rule_options: "Опции к правилу"
+        rule_template_id: "Правило"
 
     select:
       prompt: "Выберите:"
@@ -91,6 +99,28 @@ ru:
         question: "Вопрос"
         url: "URL"
         email: "Email автора"
+    badges:
+      destroy:
+        success: "Бейдж удален"
+      update:
+        success: "Бейдж сохранен"
+      create:
+        success: "Бейдж добавлен"
+      form:
+        image_prompt: "Выберите иконку"
+      new:
+        create_badge_header: "Создать Бейдж"
+      edit:
+        edit_badge_header: "Редактировать Бейдж"
+      index:
+        name: "Название"
+        description: "Описание"
+        rule: "Правило"
+        actions: "Действия"
+        no_badges_placeholder: "Нет сохраненных бейджей"
+        new_badge_link: "Создать бейдж"
+      show:
+        reward_for: "Награда за %{description}"
 
   general:
     errors: "Ошибки"
@@ -102,9 +132,10 @@ ru:
     welcome: "Добро пожаловать, гуру %{first_name}!"
     unauthorized: "Нет прав для просмотра этой страницы"
     welcome_flash: "Привет, %{first_name}!"
-    management: "Управление"
+    management: "Управление Тестами"
     gist_list: "Список gist"
     feedback: "Обратная связь"
+    badge_management: "Управление бейджами"
 
   test_passages:
     result:
