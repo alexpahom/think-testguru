@@ -153,6 +153,7 @@ ru:
     update:
       test_completed: "Тест окончен!"
       time_is_up: "Время вышло"
+    new_badge_received: "Поздравляем! Вы получаете бейдж!"
 
   tests:
     test:

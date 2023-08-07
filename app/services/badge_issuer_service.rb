@@ -8,10 +8,10 @@ class BadgeIssuerService
     at_first_try:           BadgeRules::AtFirstTryRule,
     pass_after_fail:        BadgeRules::PassAfterFailRule,
     n_tests_in_row:         BadgeRules::NTestsInRowRule,
-    # { text: 'n_tests' },
-    # { text: 'all_tests_of_level' },
-    # { text: 'all_tests' },
-    # { text: 'n_badges' },
+    n_tests:                BadgeRules::NTestsRule,
+    all_tests_of_level:     BadgeRules::AllTestsOfLevelRule,
+    all_tests:              BadgeRules::AllTestsRule,
+    n_badges:               BadgeRules::NBadgesRule
   }
 
   attr_reader :new_badges_issued

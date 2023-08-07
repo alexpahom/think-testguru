@@ -36,6 +36,6 @@ class TestPassagesController < ApplicationController
 
   def check_for_badges
     new_badges = BadgeIssuerService.new(@test_passage).scan_for_reward.new_badges_issued
-    flash[:success] = 'Got new badges!' if new_badges
+    flash[:success] = t('.new_badge_received') if new_badges
   end
 end

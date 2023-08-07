@@ -184,6 +184,7 @@ en:
     update:
       test_completed: "Test completed!"
       time_is_up: "Time's up"
+    new_badge_received: "Congratulations! You're awarded with a badge!"
 
   tests:
     test:
