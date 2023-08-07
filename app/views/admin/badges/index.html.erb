@@ -1,0 +1,17 @@
+<table class="table table-hover">
+  <tr>
+    <th><%= t('.name') %></th>
+    <th><%= t('.description') %></th>
+    <th><%= t('.rule') %></th>
+    <th colspan="3"><%= t('.actions') %></th>
+  </tr>
+  <% if @badges.empty? %>
+    <tr class="text-center">
+      <td colspan="100%">
+        <%= t('.no_badges_placeholder') %>
+      </td>
+    </tr>
+  <% end %>
+  <%= render @badges %>
+</table>
+<%= link_to t('.new_badge_link'), new_admin_badge_path, class: 'btn btn-primary btb-lg' %>

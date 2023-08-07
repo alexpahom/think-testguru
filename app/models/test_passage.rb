@@ -6,7 +6,7 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_question, on: %i[create update]
+  before_validation :before_validation_set_question, on: %i[create update], unless: :completed_at
 
   def accept!(answer_ids)
     return if time_is_up?
@@ -16,7 +16,7 @@ class TestPassage < ApplicationRecord
 
   def completed?
     return true if time_is_up?
-    self.completed_at = Time.now if current_question.nil?
+    update!(completed_at: Time.now) if current_question.nil?
   end
 
   def passed?
@@ -28,7 +28,7 @@ class TestPassage < ApplicationRecord
   end
 
   def time_is_up?
-    created_at + test.time_limit.seconds < Time.now
+    test.time_limit && created_at + test.time_limit.seconds < Time.now
   end
 
   def finish_by

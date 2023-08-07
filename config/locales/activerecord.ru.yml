@@ -7,6 +7,7 @@ ru:
       category: "Категория"
       user: "Пользователь"
       admin: "Администратор"
+      badge: "Бейдж"
 
     attributes:
       test:
@@ -26,6 +27,11 @@ ru:
         first_name: "Имя"
         last_name: "Фамилия"
         password: "Пароль"
+      badge:
+        name: "Название"
+        description: "Описание"
+        badge_image: "Иконка"
+        rule_template: "Правило"
 
     errors:
       messages:

@@ -1,0 +1,17 @@
+<div class="container mt-5 p-2" id="badge-card">
+  <div class="row">
+    <div class="col">
+      <%= image_tag(@badge.badge_image.url) %>
+    </div>
+    <div class="col">
+      <p class="fw-semibold"><%= @badge.name %></p>
+
+      <p><%= t('.reward_for', description: @badge.description) %></p>
+    </div>
+  </div>
+</div>
+
+<div class="my-5">
+  <%= link_to t('admin.actions.edit'), edit_admin_badge_path(@badge), class: 'btn btn-primary btn-lg' %>
+  <%= link_to t('general.back'), admin_badges_path, class: 'btn btn-lg' %>
+</div>

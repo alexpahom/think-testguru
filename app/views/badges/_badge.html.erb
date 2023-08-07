@@ -1,0 +1,19 @@
+<div class="badge-card row m-3 px-2 py-4 w-75">
+  <div class="col col-3">
+    <% class_list = "d-flex justify-content-center align-items-center #{css_availability_class(badge)}" %>
+    <div class="position-relative">
+      <%= content_tag :div, class: class_list do %>
+        <%= image_tag(badge.badge_image.url, size: '70x70') %>
+        <% if (count = received_badges[badge]) != 0 %>
+          <%= content_tag :div, count, class: 'badge-counter' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col">
+    <p class="fw-semibold"><%= badge.name %></p>
+
+    <p><%= badge.description %></p>
+  </div>
+</div>
